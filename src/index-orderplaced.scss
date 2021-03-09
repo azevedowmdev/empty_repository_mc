@@ -1,0 +1,304 @@
+@import "./index-checkout.scss";
+
+.body-checkout-confirmation {
+    #app-top,
+    #app-container {
+        @extend .container;
+    }
+
+    #app-top {
+        h1 {
+            display: none;
+
+            + time {
+                display: none;
+            }
+        }
+
+        .bg-washed-green {
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            background: none;
+
+            & > div {
+                & > span {
+                    font-size: 14px;
+                    font-weight: $font-family-bold-first;
+                    color: $color-third;
+                    text-align: center;
+                    text-transform: uppercase;
+                    line-height: 15px;
+
+                    &:before {
+                        display: block;
+                        width: 36px;
+                        height: 36px;
+                        margin: 0 auto 8px;
+                        background: url("../src/assets/images/ico-check.svg") center no-repeat;
+                        background-size: 100%;
+                        content: "";
+                    }
+
+                    + div {
+                        font-size: 14px;
+                        color: $color-sixth;
+                        text-transform: uppercase;
+                        line-height: 20px;
+                    }
+                }
+
+                .cconf-client-email {
+                    color: $color-third;
+                }
+
+                .cconf-bank-invoice-container {
+                    font-size: 14px;
+                    color: $color-sixth;
+                    text-align: center;
+                    text-transform: uppercase;
+                    line-height: 20px;
+                }
+
+                .cconf-button {
+                    @extend %button-reset;
+                    @extend %button-color;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .cconf-bank-invoice-data {
+            .cconf-bank-invoice-data__header {
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+
+            .cconf-bank-invoice-data__print {
+                a {
+                    @extend %button-reset;
+                    @extend %button-color;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .cconf-bank-invoice-data__embedded {
+            button {
+                @extend %button-reset;
+                @extend %button-color;
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    #app-container {
+        h2 {
+            margin: 50px 0 16px;
+            font-family: $font-family-first;
+            font-size: 14px;
+            font-weight: $font-family-bold-first;
+            color: $color-sixth;
+            text-transform: uppercase;
+            line-height: 15px;
+
+            #order-id {
+                display: inline-block;
+            }
+        }
+
+        .cconf-profile {
+            width: calc((100% / 3) - 10px);
+            min-height: 250px;
+            margin: 0 5px;
+            padding: 45px 25px;
+            border: 1px solid #e0e0e0;
+
+            @media screen and (max-width: 959px) {
+                width: 100%;
+            }
+
+            h3 {
+                font-family: $font-family-first;
+                font-size: 14px;
+                font-weight: $font-family-bold-first;
+                color: $color-sixth;
+                line-height: 1;
+
+                + div {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .cconf-payment {
+            @extend .cconf-profile;
+        }
+
+        .cconf-summary {
+            @extend .cconf-profile;
+        }
+
+        .w-third-l {
+            @media screen and (max-width: 959px) {
+                width: 100%;
+            }
+        }
+
+        h4 {
+            font-family: $font-family-first;
+            font-size: 14px;
+            font-weight: $font-family-bold-first;
+            color: $color-sixth;
+            line-height: 1;
+
+            span {
+                font-size: inherit;
+                font-weight: inherit;
+            }
+
+            + p {
+                font-size: 14px;
+            }
+
+            ~ div {
+                font-size: 14px;
+            }
+        }
+
+        .w-two-thirds-l {
+            & > div {
+                overflow: hidden;
+                width: 100%;
+                border-radius: 0;
+
+                div {
+                    @extend %button-color;
+                    float: right;
+                    padding: 9px 12px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+
+                span {
+                    float: left;
+                    display: block;
+                    width: 150px;
+                    font-size: 14px;
+                    text-align: left;
+
+                    span {
+                        float: none;
+                        display: inline-block;
+                        width: auto;
+                    }
+                }
+            }
+
+            .cconf-product-table {
+                color: $color-sixth;
+
+                a {
+                    color: inherit;
+                }
+
+                .gray {
+                    font-size: 14px;
+                    font-weight: $font-family-bold-first;
+                    color: $color-sixth;
+                }
+            }
+        }
+
+        .cconf-myorders-button {
+            @extend %button-reset;
+            @extend %button-normal;
+            width: calc(50% - 50px);
+            height: 58px;
+            margin: 0 25px;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 56px;
+
+            @media screen and (max-width: 959px) {
+                width: calc(50% - 20px);
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                margin: 0 0 20px;
+            }
+        }
+
+        .cconf-continue-button {
+            @extend %button-reset;
+            @extend %button-color;
+            width: calc(50% - 50px);
+            height: 58px;
+            margin: 0 25px;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 58px;
+
+            @media screen and (max-width: 959px) {
+                width: calc(50% - 20px);
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                margin: 0 0 20px;
+            }
+        }
+    }
+}
+
+#checkout-confirmation-header {
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .steps-of-order {
+        .wrapper {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                flex: 1 1 auto;
+                font-size: 14px;
+                color: $color-third;
+                text-align: center;
+            }
+
+            .ico-step {
+                display: block;
+                width: 46px;
+                height: 36px;
+                margin: 0 auto 5px;
+                padding: 0 7px;
+                // background: #fff url("../src/assets/images/ico-check.svg") center no-repeat;
+                background-size: 36px 36px;
+            }
+
+            .bg-line {
+                position: absolute;
+                top: 18px;
+                right: 14%;
+                left: 14%;
+                height: 1px;
+                background: $color-third;
+                z-index: -1;
+            }
+        }
+    }
+}

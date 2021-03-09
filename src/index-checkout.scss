@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;800&display=swap');
+
+.mobile {
+    display: none;
+}
+
+#ajaxBusy,
+.is-hidden {
+    @include is-hidden();
+}
+
+html {
+    box-sizing: border-box;
+
+    * {
+        box-sizing: inherit;
+    }
+}
+
+body {
+    padding: 0;
+    background: #fff;
+    font-family: $font-family-first;
+    font-size: 62.5%;
+    color: $color-first;
+    @include font-smoothing();
+
+    &:before {
+        content: "";
+        transition: all 0.3s ease-out;
+        opacity: 0;
+    }
+
+    > object {
+        position: absolute !important;
+        bottom: -100% !important;
+        left: -100% !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        visibility: hidden !important;
+        &:hover,
+        &:focus,
+        &:active,
+        &:visited {
+            outline: none;
+        }
+    }
+
+    &:not([class*="-com-br"]) {
+        background: transparent;
+    }
+}
+
+.container {
+    position: relative;
+    max-width: $max-width-container;
+    min-width: $min-width-container;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 24px;
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 0 16px;
+    }
+}
+
+a {
+    @extend %href-link;
+}
+
+button {
+    &:focus,
+    &:visited,
+    &:active {
+        outline: none;
+    }
+}
+
+label {
+    display: initial;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited {
+        outline: none;
+    }
+}
+
+input,
+button,
+select {
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active {
+        outline: none !important;
+    }
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active {
+        outline: none !important;
+    }
+
+    li {
+        &:hover,
+        &:focus,
+        &:visited,
+        &:active {
+            outline: none !important;
+        }
+    }
+}
+
+.body-cart,
+.body-order-form {
+    .header {
+        margin-bottom: 30px;
+    }
+}
+
+.default-modal {
+    height: auto;
+    border: none;
+    border-radius: 0;
+    background: #ffffff;
+    color: $color-third;
+
+    .default-modal-body {
+        margin: 0 auto;
+    }
+
+    .payment-confirmation-security,
+    .guest-login-security {
+        position: initial;
+    }
+
+    .masked-info-security {
+        margin-bottom: 0;
+    }
+
+    .masked-info-security,
+    .identified-user-security,
+    .payment-unauthorized-security {
+        font-size: 80px;
+        line-height: 80px;
+    }
+
+    .guest-login-actions {
+        float: none;
+
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    button {
+        @extend %button-reset;
+        @extend %button-color;
+        width: 100%;
+        text-shadow: none;
+    }
+}
+
+.confirmation-modal {
+    height: auto;
+    border: none;
+    border-radius: 0;
+    background: #ffffff;
+    color: $color-third;
+
+    .unavailable-items {
+        margin-bottom: 20px;
+    }
+
+    button {
+        @extend %button-reset;
+
+        &:not(.btn-success) {
+            @extend %button-normal;
+        }
+
+        &.btn-success {
+            @extend %button-color;
+        }
+    }
+}
